@@ -20,7 +20,6 @@ window.onresize = function () {
 }
 
 var objects = [];
-
 window.onresize();
 var Iris = new iris();
 var Arcs = new arcs();
@@ -32,7 +31,6 @@ document.onmousemove = function (event) {
     mouseY = event.clientY;
     console.log("mouseX = " + mouseX);
     console.log("mouseY = " + mouseY);
-    //drawIris();
     drawElements();
     collision();
 }
@@ -43,9 +41,6 @@ function drawElements() {
         if (objects[i].drawIris) objects[i].drawIris();
     }
     drawEye();
-//    for (var i = 0; i < objects.length; i++) {
-//        if (objects[i].drawArcs) objects[i].drawArcs();
-//    }
 }
 
 function drawEye() {
@@ -55,9 +50,4 @@ function drawEye() {
     render.beginPath();
     render.arc(x, y, size, 0, 2 * Math.PI);
     render.drawImage(eye_img, x - size, y - size, eye_img.width * 2, eye_img.height * 2);
-    //render.stroke();
-}
-
-function collision() {
-
 }
